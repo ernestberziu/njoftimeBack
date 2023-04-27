@@ -16,7 +16,7 @@ const app = express();
 
 // view engine setup
 app.use(cors({
-  origin: '*'
+  origin: ['*', 'https://njoftime-back.vercel.app/login']
 }));
 app.use(logger('dev'));
 app.use(cookieParser());
