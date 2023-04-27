@@ -12,7 +12,7 @@ const API = require('./db');
 require('dotenv').config();
 
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
