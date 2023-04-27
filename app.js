@@ -16,7 +16,7 @@ const app = express();
 
 // view engine setup
 app.use(cors({
-  origin: ['*', 'https://njoftime-front.vercel.app']
+  origin: '*'
 }));
 app.use(logger('dev'));
 app.use(cookieParser());
