@@ -16,7 +16,10 @@ const app = express();
 
 // view engine setup
 app.use(cors({
-  origin: '*'
+  origin: "*",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  preflightContinue: false,
+  optionsSuccessStatus: 204
 }));
 app.use(logger('dev'));
 app.use(cookieParser());
