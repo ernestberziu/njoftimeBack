@@ -47,7 +47,7 @@ const login = async (data, res) => {
 }
 
 const save = (Model) => async (data, res) => {
-    console.warn({ first: item })
+    console.warn({ first: 'test' })
     const item = Model({ ...data.body, deleted: false })
     console.warn({ second: item })
     try {
