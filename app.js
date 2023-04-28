@@ -31,7 +31,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/products', isPunemarres, productsRouter);
+app.use('/products', productsRouter);
 app.use('/users', usersRouter);
 app.post('/login', API.login);
 
