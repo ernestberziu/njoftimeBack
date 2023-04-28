@@ -50,7 +50,7 @@ const save = (Model) => async (data, res) => {
     console.warn({ first: 'test' })
     const item = Model({ ...data.body, deleted: false })
     console.warn({ second: item })
-    const itemToSave = item.save();
+    const itemToSave = item.save().then((res) => console.warn({ res })).catch((err) => console.warn({ err }));;
     console.warn(itemToSave)
     res.status(200).json(itemToSave)
 }
