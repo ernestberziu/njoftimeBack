@@ -20,6 +20,9 @@ const app = express();
 app.use(cors({
   origin: '*'
 }));
+app.listen(process.env.PORT || '3000', () => {
+  console.log(`API listening on PORT ${PORT} `)
+})
 app.use(logger('dev'));
 app.use(cookieParser());
 app.use(express.json());
