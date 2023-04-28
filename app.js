@@ -14,12 +14,14 @@ require('dotenv').config();
 
 const app = express();
 
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
 // view engine setup
 app.use(cors({
   origin: "*",
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  preflightContinue: false,
-  optionsSuccessStatus: 204
 }));
 app.use(logger('dev'));
 app.use(cookieParser());
