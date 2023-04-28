@@ -48,11 +48,14 @@ const login = async (data, res) => {
 
 const save = (Model) => async (data, res) => {
     const item = Model({ ...data.body, deleted: false })
+    console.error(item)
     try {
         const itemToSave = await item.save();
+        console.error(itemToSave)
         res.status(200).json(itemToSave)
     }
     catch (error) {
+        console.error(error)
         res.status(400).json({ message: error.message })
     }
 }
