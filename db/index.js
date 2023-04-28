@@ -47,15 +47,16 @@ const login = async (data, res) => {
 }
 
 const save = (Model) => async (data, res) => {
+    console.error({ first: item })
     const item = Model({ ...data.body, deleted: false })
-    console.error(item)
+    console.error({ second: item })
     try {
         const itemToSave = await item.save();
         console.error(itemToSave)
         res.status(200).json(itemToSave)
     }
     catch (error) {
-        console.error(error)
+        console.error({ third: error })
         res.status(400).json({ message: error.message })
     }
 }
