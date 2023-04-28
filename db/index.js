@@ -50,15 +50,9 @@ const save = (Model) => async (data, res) => {
     console.warn({ first: 'test' })
     const item = Model({ ...data.body, deleted: false })
     console.warn({ second: item })
-    try {
-        const itemToSave = await item.save();
-        console.warn(itemToSave)
-        res.status(200).json(itemToSave)
-    }
-    catch (error) {
-        console.warn({ third: error })
-        res.status(400).json({ message: error.message })
-    }
+    const itemToSave = item.save();
+    console.warn(itemToSave)
+    res.status(200).json(itemToSave)
 }
 
 const get_one = (Model) => async (data, res) => {
