@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const Products = require('./products');
 const Users = require('./users');
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
     .then(() => console.error('Connected to MongoDB...'))
     .catch(err => console.error('Could not connect to MongoDB...', err));;
 const jwt = require('jsonwebtoken');
