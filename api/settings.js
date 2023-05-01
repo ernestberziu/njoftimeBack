@@ -1,6 +1,6 @@
-const mongoose = require("./mongose");
 const app = require("express")();
 const bodyParser = require("body-parser");
+const { default: mongoose } = require("mongoose");
 
 
 app.use(bodyParser.json());

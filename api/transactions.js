@@ -1,7 +1,7 @@
 let app = require("express")();
 let bodyParser = require("body-parser");
 let Products = require("./products");
-const mongoose = require("./mongose");
+const { default: mongoose } = require("mongoose");
 
 app.use(bodyParser.json());
 
