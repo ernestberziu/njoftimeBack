@@ -14,14 +14,11 @@ require('dotenv').config();
 
 const app = express();
 
-// view engine setup
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'jade');
 app.use(cors({
   origin: '*'
 }));
 app.listen(process.env.PORT || '3000', () => {
-  console.log(`API listening on PORT ${PORT} `)
+  console.log(`API listening on PORT ${process.env.PORT} `)
 })
 app.use(logger('dev'));
 app.use(cookieParser());
@@ -34,6 +31,12 @@ app.use('/', indexRouter);
 app.use('/products', isPunemarres, productsRouter);
 app.use('/users', usersRouter);
 app.post('/login', API.login);
+app.use("/api/products", require("./api/products"));
+app.use("/api/customers", require("./api/customers"));
+app.use("/api/categories", require("./api/categories"));
+app.use("/api/settings", require("./api/settings"));
+app.use("/api/users", require("./api/users"));
+app.use("/api", require("./api/transactions"));
 
 
 // catch 404 and forward to error handler

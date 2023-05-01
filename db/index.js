@@ -113,6 +113,7 @@ const delete_item = (Model) => async (data, res) => {
 const POST = {
     Products: save(Products),
     Users: save(Users)
+
 }
 
 const GET_ONE = {
